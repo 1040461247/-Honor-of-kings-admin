@@ -6,7 +6,7 @@
           <template slot="title"><i class="el-icon-message"></i>内容管理</template>
           <el-menu-item-group v-for="item1 in menuInfo" :key="item1._id">
             <template slot="title">{{ item1.level1 }}</template>
-            <el-menu-item index="/categories/create" v-for="item2 in item1.children" :key="item2">{{ item2 }}</el-menu-item>
+            <el-menu-item :index="item2.url" v-for="item2 in item1.children" :key="item2.name">{{ item2.name }}</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
       </el-menu>
