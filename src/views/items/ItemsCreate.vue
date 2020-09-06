@@ -1,6 +1,6 @@
 <template>
   <div class="cate_create">
-    <h1>{{ id ? '编辑' : '新建' }}物品</h1>
+    <h1 class="title">{{ id ? '编辑' : '新建' }}物品</h1>
     <el-form label-width="120px" @submit.native.prevent="save">
       <el-form-item label="名称">
         <el-input v-model="model.name"/>
@@ -96,5 +96,8 @@ export default {
     width: 178px;
     height: 178px;
     display: block;
+  }
+  .title {
+    margin-bottom: 20px;
   }
 </style>

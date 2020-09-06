@@ -9,6 +9,8 @@ const CateCreate = () => import('views/categories/CateCreate')
 const CateList = () => import('views/categories/CateList')
 const ItemsCreate = () => import('views/items/ItemsCreate')
 const ItemsList = () => import('views/items/ItemsList')
+const HeroesCreate = () => import('views/heroes/HeroesCreate')
+const HeroesList = () => import('views/heroes/HeroesList')
 
 const routes = [
   {
@@ -20,9 +22,14 @@ const routes = [
       { path: '/categories/list', component: CateList },
       { path: '/categories/edit/:id', component: CateCreate, props: true },
       { path: '/categories/edit/:id/:parent', component: CateCreate, props: true },
+
       { path: '/items/create', component: ItemsCreate },
       { path: '/items/list', component: ItemsList },
       { path: '/items/edit/:id', component: ItemsCreate, props: true },
+      
+      { path: '/heroes/create', component: HeroesCreate },
+      { path: '/heroes/list', component: HeroesList },
+      { path: '/heroes/edit/:id', component: HeroesCreate, props: true }
     ]
   }
 ]
