@@ -13,6 +13,8 @@ const HeroesCreate = () => import('views/heroes/HeroesCreate')
 const HeroesList = () => import('views/heroes/HeroesList')
 const ArticlesCreate = () => import('views/articles/ArticlesCreate')
 const ArticlesList = () => import('views/articles/ArticlesList')
+const AdsCreate = () => import('views/ads/AdsCreate')
+const AdsList = () => import('views/ads/AdsList')
 
 const routes = [
   {
@@ -35,7 +37,11 @@ const routes = [
 
       { path: '/articles/create', component: ArticlesCreate },
       { path: '/articles/list', component: ArticlesList },
-      { path: '/articles/edit/:id', component: ArticlesCreate, props: true }
+      { path: '/articles/edit/:id', component: ArticlesCreate, props: true },
+
+      { path: '/ads/create', component: AdsCreate },
+      { path: '/ads/list', component: AdsList },
+      { path: '/ads/edit/:id', component: AdsCreate, props: true },
     ]
   }
 ]
