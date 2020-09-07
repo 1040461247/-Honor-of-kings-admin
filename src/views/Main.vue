@@ -1,12 +1,12 @@
 <template>
   <el-container style="height: 500vh;">
     <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
-      <el-menu router :default-openeds="['1', '3']">
-        <el-submenu index="1">
-          <template slot="title"><i class="el-icon-message"></i>内容管理</template>
-          <el-menu-item-group v-for="item1 in menuInfo" :key="item1._id">
-            <template slot="title">{{ item1.level1 }}</template>
-            <el-menu-item :index="item2.url" v-for="item2 in item1.children" :key="item2.name">{{ item2.name }}</el-menu-item>
+      <el-menu router unique-opened :default-active="$route.path">
+        <el-submenu v-for="item1 in menuInfo" :key="item1._id" :index="item1.level1">
+          <template slot="title" ><i class="el-icon-message"></i>{{ item1.level1 }}</template>
+          <el-menu-item-group v-for="item2 in item1.children" :key="item2.level2">
+            <template slot="title">{{ item2.level2 }}</template>
+            <el-menu-item :index="item3.url" v-for="item3 in item2.children" :key="item3.name">{{ item3.name }}</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
       </el-menu>

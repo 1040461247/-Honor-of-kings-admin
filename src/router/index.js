@@ -15,6 +15,8 @@ const ArticlesCreate = () => import('views/articles/ArticlesCreate')
 const ArticlesList = () => import('views/articles/ArticlesList')
 const AdsCreate = () => import('views/ads/AdsCreate')
 const AdsList = () => import('views/ads/AdsList')
+const AdminUserCreate = () => import('views/adminUser/AdminUserCreate')
+const AdminUserList = () => import('views/adminUser/AdminUserList')
 
 const routes = [
   {
@@ -42,6 +44,10 @@ const routes = [
       { path: '/ads/create', component: AdsCreate },
       { path: '/ads/list', component: AdsList },
       { path: '/ads/edit/:id', component: AdsCreate, props: true },
+
+      { path: '/adminUser/create', component: AdminUserCreate },
+      { path: '/adminUser/list', component: AdminUserList },
+      { path: '/adminUser/edit/:id', component: AdminUserCreate, props: true },
     ]
   }
 ]
