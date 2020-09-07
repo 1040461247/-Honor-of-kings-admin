@@ -11,5 +11,6 @@ module.exports = {
       .set('plugins', resolve('src/plugins'))
       .set('router', resolve('src/router'))
       .set('store', resolve('src/store'))
+      .set('common', resolve('src/common'))
   }
 }
