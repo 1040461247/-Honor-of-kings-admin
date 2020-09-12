@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 // lazyLoad
+const Login = () => import('views/login/login')
 const Main = () => import('views/Main')
 const CateCreate = () => import('views/categories/CateCreate')
 const CateList = () => import('views/categories/CateList')
@@ -49,12 +50,26 @@ const routes = [
       { path: '/adminUser/list', component: AdminUserList },
       { path: '/adminUser/edit/:id', component: AdminUserCreate, props: true },
     ]
+  },
+  {
+    path: '/login',
+    nzme: 'login',
+    component: Login,
+    meta: { isPublic: true }
   }
 ]
 
 const router = new VueRouter({
   routes,
   mode: 'history'
+})
+
+// 导航首位
+router.beforeEach((to, from, next) => {
+  if(to.meta.isPublic && sessionStorage.token) {
+    return next('/login')
+  }
+  next()
 })
 
 export default router

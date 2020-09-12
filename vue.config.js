@@ -12,5 +12,6 @@ module.exports = {
       .set('router', resolve('src/router'))
       .set('store', resolve('src/store'))
       .set('common', resolve('src/common'))
+      .set('tools', resolve('src/tools'))
   }
 }

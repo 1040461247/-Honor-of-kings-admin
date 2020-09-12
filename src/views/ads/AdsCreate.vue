@@ -14,9 +14,10 @@
             <el-form-item label="广告图片">
               <el-upload
                 class="avatar-uploader"
-                :action="$http.defaults.baseURL + '/upload'"
+                :action="getLoadImgPath"
                 :show-file-list="false"
-                :on-success="res => item.image = res">
+                :on-success="res => item.image = res"
+                :headers="getAuth">
                 <img v-if="item.image" :src="item.image" class="avatar">
                 <i v-else class="el-icon-plus avatar-uploader-icon"></i>
               </el-upload>
@@ -39,8 +40,11 @@
 </template>
 
 <script>
+import { getAuth, getLoadImgPath } from 'tools/mixin'
+
 export default {  
   name: 'AdsCreate',
+  mixins: [getAuth, getLoadImgPath],
   data() {
     return {
       model: {
@@ -132,5 +136,6 @@ export default {
   }
   .title {
     margin-bottom: 20px;
+    color: #606266;
   }
 </style>

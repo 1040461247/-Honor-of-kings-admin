@@ -8,9 +8,10 @@
       <el-form-item label="图标">
         <el-upload
           class="avatar-uploader"
-          :action="$http.defaults.baseURL + '/upload'"
+          :action="getLoadImgPath"
           :show-file-list="false"
-          :on-success="uploadSuccess">
+          :on-success="uploadSuccess"
+          :headers="getAuth">
           <img v-if="model.icon" :src="model.icon" class="avatar">
           <i v-else class="el-icon-plus avatar-uploader-icon"></i>
         </el-upload>
@@ -23,8 +24,11 @@
 </template>
 
 <script>
+import { getAuth, getLoadImgPath } from 'tools/mixin'
+
 export default {  
   name: 'CateCreate',
+  mixins: [ getLoadImgPath, getAuth ],
   data() {
     return {
       model: {
