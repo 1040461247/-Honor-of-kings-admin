@@ -2,8 +2,9 @@
   <div class="articles-list">
     <el-table :data="listInfo"  style="width: 100%">
       <el-table-column type="index"/>
-      <el-table-column prop="title" label="文章标题"/>
-      <el-table-column prop="parent" label="所属分类"/>
+      <el-table-column prop="title" label="文章标题" width="600"/>
+      <el-table-column prop="parent" label="所属分类" width="200"/>
+      <el-table-column prop="date" label="创建日期" width="300"/>
       <el-table-column label="操作">
         <template slot-scope="scope">
           <el-button type="text" @click="edit(scope)">编辑</el-button>
